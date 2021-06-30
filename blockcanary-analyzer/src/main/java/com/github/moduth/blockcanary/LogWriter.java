@@ -105,6 +105,7 @@ public class LogWriter {
                     + logFileName + "-"
                     + FILE_NAME_FORMATTER.format(time) + ".log";
 
+            L.i("【LogWriter】save path:" + path);
             OutputStreamWriter out =
                     new OutputStreamWriter(new FileOutputStream(path, true), "UTF-8");
 

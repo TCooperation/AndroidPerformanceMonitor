@@ -16,5 +16,18 @@
             </intent-filter>
         </activity>
 
+        <activity
+            android:name=".ui.TestActivity"
+            android:enabled="false"
+            android:icon="@drawable/block_canary_icon"
+            android:label="Test Launcher"
+            android:taskAffinity="com.github.moduth.blockcanary"
+            android:theme="@style/block_canary_BlockCanary.Base">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+
     </application>
 </manifest>

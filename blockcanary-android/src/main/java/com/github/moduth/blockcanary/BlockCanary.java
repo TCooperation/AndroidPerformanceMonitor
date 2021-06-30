@@ -22,6 +22,7 @@ import android.os.Looper;
 import android.preference.PreferenceManager;
 
 import com.github.moduth.blockcanary.ui.DisplayActivity;
+import com.github.moduth.blockcanary.ui.TestActivity;
 
 import java.util.concurrent.Executor;
 import java.util.concurrent.Executors;
@@ -59,6 +60,7 @@ public final class BlockCanary {
     public static BlockCanary install(Context context, BlockCanaryContext blockCanaryContext) {
         BlockCanaryContext.init(context, blockCanaryContext);
         setEnabled(context, DisplayActivity.class, BlockCanaryContext.get().displayNotification());
+        setEnabled(context, TestActivity.class, BlockCanaryContext.get().displayNotification());
         return get();
     }
 

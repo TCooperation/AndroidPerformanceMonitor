@@ -59,8 +59,9 @@ class StackSampler extends AbstractSampler {
     @Override
     protected void doSample() {
         StringBuilder stringBuilder = new StringBuilder();
-
+        L.i("【StackSampler】***************************");
         for (StackTraceElement stackTraceElement : mCurrentThread.getStackTrace()) {
+            L.i("【StackSampler】"+stackTraceElement.toString());
             stringBuilder
                     .append(stackTraceElement.toString())
                     .append(BlockInfo.SEPARATOR);

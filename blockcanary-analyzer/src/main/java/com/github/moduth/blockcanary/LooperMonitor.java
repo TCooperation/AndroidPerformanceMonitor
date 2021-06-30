@@ -48,10 +48,12 @@ class LooperMonitor implements Printer {
 
     @Override
     public void println(String x) {
+        L.i("【LooperMonitor】***************************");
         if (mStopWhenDebugging && Debug.isDebuggerConnected()) {
             return;
         }
         if (!mPrintingStarted) {
+            L.i("【LooperMonitor】start ***************************");
             mStartTimestamp = System.currentTimeMillis();
             mStartThreadTimestamp = SystemClock.currentThreadTimeMillis();
             mPrintingStarted = true;
@@ -63,6 +65,7 @@ class LooperMonitor implements Printer {
                 notifyBlockEvent(endTime);
             }
             stopDump();
+            L.i("【LooperMonitor】end ***************************");
         }
     }
 

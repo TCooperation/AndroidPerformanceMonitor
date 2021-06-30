@@ -148,7 +148,26 @@ class CpuSampler extends AbstractSampler {
         mAppCpuTimeLast = 0;
     }
 
+    /**
+     * @param cpuRate  cpu  210073
+     *                 48921 236112 56390510 964 158
+     *                 13964 0 0 0
+     * @param pidCpuRate 12200 (ple.blockcanary) S
+     *                   1182 1182 0 0 -1 1077961024 13204 0
+     *                   0 0 24 36 0 0 20 0 19 0
+     *                   14382932 1311739904 11621 18446744073709551615 140016569262080 140016569274408 140733828216336 140733828211496 140016568269400 0
+     *                   4612 0 38136 18446744073709551615 0 0 17 1 0 0
+     *                   0 0 0 140016569281280 140016569282552 140016599502848 140733828221935 140733828222034 140733828222034 140733828222942
+     *                   0
+     * @return
+     * @description
+     * @time 2021/6/30 5:14 下午
+     * @author zengbobo
+     */
     private void parse(String cpuRate, String pidCpuRate) {
+        L.i("【CpuSampler】***************************");
+        L.i("【CpuSampler】 parse cpuRate:" + cpuRate);
+        L.i("【CpuSampler】 parse pidCpuRate:" + pidCpuRate);
         String[] cpuInfoArray = cpuRate.split(" ");
         if (cpuInfoArray.length < 9) {
             return;
